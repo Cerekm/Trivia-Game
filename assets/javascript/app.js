@@ -1,16 +1,51 @@
+var count= 100;
+var resetButton = $("<btn>").val("Try again");
+var q1 = $("#q1").val();
+var q2 = $("#q2").val();
+var q3 = $("#q3").val();
+var q4 = $("q4").val();
+var q5 = $("#q5").val();
+var q6 = $("#q6").val();
+var q7 = $("#q7").val();
+var q8 = $("#q8").val();
+var q9 = $("#q9").val();
+var q10 = $("q10").val();
+var correct = 0;
+if (q1 == "blue") {
+    correct++;
+    console.log(correct)
+}
+if (q2 =="east") {
+    correct++;
+}
+if (q3 == "7") {
+    correct++;
+}
+if (q4 == "George Washington") {
+    correct++;
+}
+if (q5 == "copper") {
+    correct++;
+}
+if (q6 == "Space Jam") {
+    correct++;
+    console.log(correct)
+}
+if (q7 == "Netherlands") {
+    correct++;
+}
+if (q8 == "true") {
+    correct++;
+}
+if (q9 == "true") {
+    correct++;
+}
+if (q10 == "false") {
+    correct++;
+}
 
-var count=90;
-var correct= 0;
-var question1 = $("q1").val();
-var question2 = $("q2").val();
-var question3 = $("q3").val();
-var question4 = $("q4").val();
-var question5 = $("q5").val();
-var question6 = $("q6").val();
-var question7 = $("q7").val();
-var question8 = $("q8").val();
-var question9 = $("q9").val();
-var question10 = $("q10").val();
+
+console.log(q1);
 
 
 $("#start").on("click", function(timer) {
@@ -26,7 +61,7 @@ function timer()
   if (count <= 0)
   {
      clearInterval(counter);
-     check = true;
+     
 
      return;
      
@@ -51,12 +86,33 @@ $("#start").on("click", function startquiz() {
     $("#q8").css("visibility", "visible");
     $("#q9").css("visibility", "visible");
     $("#q10").css("visibility", "visible");
+    $("#done").css("visibility", "visible");
    
 });
+if (count === 1 || $("#done").on("click") ){
+    $("#q1").css("visibility", "hidden");
+    $("#q2").css("visibility", "hidden");
+    $("#q3").css("visibility", "hidden");
+    $("#q4").css("visibility", "hidden");
+    $("#q5").css("visibility", "hidden");
+    $("#q6").css("visibility", "hidden");
+    $("#q7").css("visibility", "hidden");
+    $("#q8").css("visibility", "hidden");
+    $("#q9").css("visibility", "hidden");
+    $("#q10").css("visibility", "hidden");
 
 function check(){
-    if (q1 === "blue") {
+    
+
+    $("#wrapper").append(resetButton);
+    
+
+}}
+
+$("#done").on("click", function check() {
+    if (q1 ==="blue") {
         correct++;
+        console.log(correct);
     }
     if (q2 === "east") {
         correct++;
@@ -64,7 +120,7 @@ function check(){
     if (q3 === "7") {
         correct++;
     }
-    if (q4 === "George Washington") {
+    if (q4 ==="George Washington") {
         correct++;
     }
     if (q5 === "copper") {
@@ -72,6 +128,7 @@ function check(){
     }
     if (q6 === "Space Jam") {
         correct++;
+        console.log(correct);
     }
     if (q7 === "Netherlands") {
         correct++;
@@ -85,9 +142,21 @@ function check(){
     if (q10 === "false") {
         correct++;
     }
-}
+    console.log(correct);
+    $("#q1").css("visibility", "hidden");
+    $("#q2").css("visibility", "hidden");
+    $("#q3").css("visibility", "hidden");
+    $("#q4").css("visibility", "hidden");
+    $("#q5").css("visibility", "hidden");
+    $("#q6").css("visibility", "hidden");
+    $("#q7").css("visibility", "hidden");
+    $("#q8").css("visibility", "hidden");
+    $("#q9").css("visibility", "hidden");
+    $("#q10").css("visibility", "hidden");
+    $("#wrapper").text("Your score:" + correct +"/10");
+    $("#wrapper").append(resetButton);
 
-
+})
 
 
 
